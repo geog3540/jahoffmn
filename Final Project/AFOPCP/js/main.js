@@ -1,5 +1,5 @@
 
-var polygonJSONFile = "data/IowaZipAFOJoined.geojson";
+var polygonJSONFile = "data/IowaZipAFOJoinedSimp.json";
 
 //change the center of your map in setView
 var centerLatitude = 42.17, centerLongitude = -93.45;
