@@ -11,7 +11,7 @@ var numberOfClasses = 4;
 var colors = colorbrewer.Reds;
 
 //TODO: change the name and id field of your data. These will be used to link the pcp with the map, and also display labels
-var key = "GEOID20";
+var key = "ZCTA";
 var dropdowntext = "Select Attribute:";
 
 //TODO: change the name of the attributes to include in the parallel coordinate plot
