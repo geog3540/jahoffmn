@@ -1,5 +1,5 @@
 
-var polygonJSONFile = "data/IowaCountiesJOINED.geojson";
+var polygonJSONFile = "data/IowaZipAFOJoined.geojson";
 
 //change the center of your map in setView
 var centerLatitude = 42.17, centerLongitude = -93.45;
@@ -7,15 +7,15 @@ var centerLatitude = 42.17, centerLongitude = -93.45;
 // zoom level 1 shows the whole world, and 15 focuses on a neighborhood level
 var zoomLevel = 7;
 
-var numberOfClasses = 3;
+var numberOfClasses = 4;
 var colors = colorbrewer.Reds;
 
 //TODO: change the name and id field of your data. These will be used to link the pcp with the map, and also display labels
-var key = "NAME";
+var key = "GEOID20";
 var dropdowntext = "Select Attribute:";
 
 //TODO: change the name of the attributes to include in the parallel coordinate plot
-var attNames = ["AFOCountyTotals_CHICKEN", "AFOCountyTotals_CATTLE", "AFOCountyTotals_SWINE"];
+var attNames = ["AFOZipTotals$.Cattle__", "AFOZipTotals$.Swine__", "AFOZipTotals$.Chicken__", "AFOZipTotals$.Prostate_Risk_Probability","AFOZipTotals$.NHL_Risk_Probability", "AFOZipTotals$.Colorectal_Risk_Probability","AFOZipTotals$.Lung_Risk_Probability"];
 var attLegendFormat = ".0f"
 
 // This string is appended in front of the attribute name to make age groups descriptive
