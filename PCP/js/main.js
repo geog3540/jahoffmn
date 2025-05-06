@@ -1,5 +1,5 @@
 
-var polygonJSONFile = "data/AFOPointsGeoPostSimp.json";
+var polygonJSONFile = "data/AFOPointsGeoPostSimp.json"; //TODO: change to your own data file
 
 //change the center of your map in setView
 var centerLatitude = 42.17, centerLongitude = -93.45;
@@ -7,17 +7,18 @@ var centerLatitude = 42.17, centerLongitude = -93.45;
 // zoom level 1 shows the whole world, and 15 focuses on a neighborhood level
 var zoomLevel = 7;
 
+//TODO: change the colors
 var numberOfClasses = 4;
 var colors = colorbrewer.Reds;
 
-//TODO: change the name and id field of your data. These will be used to link the pcp with the map, and also display labels
+//TODO: change the name and id field of your data. These will be used to link the pcp with the map and display labels
 var key = "ZCTA";
-var dropdowntext = "Select Attribute:";
 
-//TODO: change the name of the attributes to include in the parallel coordinate plot
-var attNames = ["Pct_Cattle","Pct_Chicken","Pct_Swine","Prostate_Risk_Prob","NHL_Risk_Prob","Colorectal_Risk_Prob"
-  ,"Lung_Risk_Prob"];
-var attLegendFormat = ".0f"
+//TODO: change the attribute names to be included in the parallel coordinate plot
+var attNames = ["Prostate_Risk_Prob", 
+  "NHL_Risk_Prob", "Colorectal_Risk_Prob", "Lung_Risk_Prob"];
+
+var attLegendFormat = ".1f"
 
 // This string is appended in front of the attribute name to make age groups descriptive
 // If your attribute names do not need a preceding text, simply make this an empty string ""
@@ -67,11 +68,13 @@ d3.json(polygonJSONFile, function(error, jsonData) {
     }
 
     attNames.forEach(function(att){
-      if(d.properties[att])
+      if(d.properties[att]) {
       row[att] = +d.properties[att];
+      }
     });
     pcpdata.push(row)
   });
+
 
   expressed = attNames[0];
   var recolorMap = colorScale(jsonData.features);
@@ -141,7 +144,7 @@ function createDropdown(jsonData){
   //add a select element for the dropdown menu
   var dropdown = d3.select("#dropdown")
   .append("div")
-  .html("<h4>Select Livestock Type: </h4>")
+  .html("<h4>Select Age Group: </h4>")
   .append("select")
   .on("change", function(){ changeAttribute(this.value, jsonData) }); //changes expressed attribute
 
@@ -243,7 +246,7 @@ function format(number){
 function highlight(data){
   // json properties
   var props = data.properties;
-  var labelAttribute = "<h1>"+ format(props[expressed]) + "</h1><br><b>" + preAttributeAlias + " " + expressed + "</b><br><b>" + props[key]+ "</b>"; //label content
+  var labelAttribute = "<h1>"+ format(props[expressed]) + "%</h1><br><b> " + expressed + "</b><br><b>" + props[key]+ "</b>"; //label content
   var labelName = data.id;
 
   // Append label
