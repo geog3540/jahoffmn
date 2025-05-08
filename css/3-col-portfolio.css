@@ -21,3 +21,9 @@ body {
 .pagination {
   margin-bottom: 30px;
 }
+
+.card-img-top {
+  width: 300px; /* Adjust width as needed */
+  height: 200px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures the image is cropped properly */
+}

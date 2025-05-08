@@ -1,5 +1,5 @@
 
-var polygonJSONFile = "data/AFOPointsGeoPostSimp.json"; //TODO: change to your own data file
+var polygonJSONFile = "data/AFOPointsGEOPostSimp.json"; //TODO: change to your own data file
 
 //change the center of your map in setView
 var centerLatitude = 42.17, centerLongitude = -93.45;
