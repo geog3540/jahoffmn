@@ -38,16 +38,90 @@
         <small>a Self Organizing Map</small>
       </h1>
 
+      <!-- All Variables -->
       <div class="row">
-        <div class="col-lg-4 col-sm-6 portfolio-item">
-          <img class="card-img-top" src="Images/Headshot.jpg" alt="" style="width:200px; height:auto;">
-         </div>
-         <p class="card-text">text here</p>
+         <p class="card-text">The tool SOMVIS was used to visualize the multivariate relationships between 
+          animal agriculure and cancer rates in Iowa. SOMVIS clusters the data into groups that are similar 
+          across all variables considered. Overall, the similiarity in color of each zip code indicates more
+          similar clustering. Three different visualizations are produced using SOMVIS. There is a choropleth
+          map where counties are colored based on the cluster they blong to, a parallel coordinates plot which
+          shows the values of each variable for each cluster, and self organizing map. The self organizing
+          map plots each cluster as circle which is scaled by the number of zip codes in that cluster. The hexagons
+          between each cluster are colored based on how close or apart the clusers are, where dark gray or black rrepresent 
+          dissimilarity between neighboring clusters, and light gray or white represent similarity. Below is a visualization of 
+          all variables considered, which are listed below. 
+         </p>
+         <p class="card-text">
+          <strong>Variables used for the SOMVIS Visualization:</strong>
+          <ul>
+            <li>Normalized percentages of cattle (Pct_Cattle), swine (Pct_Swine), and chicken (Pct_Chicken) created by dividing the amount of each respective animal in the chosen zip by the total
+              of that animal in the state.</li>
+            <li>Age adjusted rate of cancer incidence from 2016 - 2020 for Prostate, Non-Hodgkins Lymphoma (NHL), Colorectal, and Lung.</li>
+          </ul>
+        </p>
       </div>
-      <!-- /.row -->
+      
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+          <img class="card-img-top" src="Images/SOMVISallvariables.jpg" alt="" style="width:1000px; height:auto;">
+      </div>
 
+      <!-- Cattle -->
+        <div class="row">
+         <p class="card-text">
+          <strong>Cattle and Cancer Incidence</strong><br>
+          By removing swine and chicken from the analysis, the relationship between cattle and cancer incidence can be seen.
+          The most obvious clusters are those in green shades, mostly in Northwest Iowa which have both high cattle and high
+          incidence rates for Colorectal and Prostate. 
+           </p>
+        </div>
+      <br>
+      <div class="row">
+         <p class="card-text">
+          The visualization below shows all clusters between cattle and cancer incidence:
+           </p>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+          <img class="card-img-top" src="Images/SOMVIScattleall.jpg" alt="" style="width:1000px; height:auto;">
+      </div>
+  
+       <!-- Swine -->
+        <div class="row">
+         <p class="card-text">
+          <strong>Swine and Cancer Incidence</strong><br>
+          By removing cattle and chicken from the analysis, the relationship between swine and cancer incidence can be seen.
+          Less obvious clusters are seen, however, Northwest Iowa is still highly clustered. As seen in the point symbol map,
+          swine is highly distriubted across the state, with a slightly higher concentration in the Northwest. Due to this,
+          clusters are much less distinct. 
+           </p>
+        </div>
+      <br>
+      <div class="row">
+         <p class="card-text">
+          The visualization below shows all clusters between swine and cancer incidence:
+           </p>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+          <img class="card-img-top" src="Images/SOMswineall.jpg" alt="" style="width:1000px; height:auto;">
+      </div>
 
-    </div>
+         <!-- Chicken -->
+        <div class="row">
+         <p class="card-text">
+          <strong>Chicken and Cancer Incidence</strong><br>
+          By removing cattle and swine from the analysis, the relationship between chicken and cancer incidence can be seen.
+          Again, Northwest Iowa is highly clustered, but not with high amounts of chicken. From the clusters, no link between
+          chicken and cancer incidence is seen.
+           </p>
+        </div>
+      <br>
+      <div class="row">
+         <p class="card-text">
+          The visualization below shows all clusters between chicken and cancer incidence:
+           </p>
+      </div>
+      <div class="col-lg-4 col-sm-6 portfolio-item">
+          <img class="card-img-top" src="Images/SOMVISchickenall.jpg" alt="" style="width:1000px; height:auto;">
+      </div>
     <!-- /.container -->
 
     <!-- Footer -->
